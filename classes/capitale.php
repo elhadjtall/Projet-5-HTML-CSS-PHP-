@@ -15,12 +15,12 @@ class Capitale {
     //Creer une visibilité
 
     private function setPays($pays){
-        if(is_string) { //Verifier si c'est une chaine de caractère avec la fonction is-string
+        if(is_string($pays)) { //Verifier si c'est une chaine de caractère avec la fonction is-string
             $this->pays = $pays;
         }
     }
     private function setCapitale($capitale){
-        if(is_string){
+        if(is_string($capitale)){
             $this->capitale = $capitale;
         }
     }

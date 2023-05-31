@@ -17,7 +17,7 @@ include('classes/capitale.php');
             <select name="pays" id="">
                 <option value="allemagne">Allemagne</option>
                 <option value="belgique">Belgique</option>
-                <option value="espace">Espagne</option>
+                <option value="espagne">Espagne</option>
                 <option value="france">France</option>
                 <option value="guinée">Guinée</option>
                 <option value="hollande">Hollande</option>
@@ -31,25 +31,33 @@ include('classes/capitale.php');
         //Creer une variable pays 
         $pays = $_POST['pays'];
 
+        // On utilise la fonction switch
         switch($pays) {
             case 'allemagne':
                 $capitale = 'berlin';
                 break;
             case 'belgique':
                 $capitale = 'bruxel';
+                break;
             case 'espagne':
                 $capitale = 'madrid';
+                break;
             case 'france':
                 $capitale = 'paris';
+                break;
             case 'guinée':
                 $capitale = 'conakry';
+                break;
             case 'hollande':
                 $capitale = 'amsterdam';
+                break;
             case 'italie':
                 $capitale = 'rome';
+                break;
         }
         // Si l'objet voir existe on instentie une nouvelle capitale avec la fonction new 
-        $capitale = new Capitale($pays);
+        $capitale = new Capitale($pays, $capitale);
+        echo $capitale; // On affiche la capitale
     }
 
     ?>
